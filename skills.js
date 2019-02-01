@@ -167,7 +167,9 @@ jQuery(document).ready(function( $ ) {
         .map(function(s) {
           var bits = s.split(/\s?\[?(\w)\] - /);
 
-          return buildSkillTag(bits);
+          if (bits[2]) {
+            return buildSkillTag(bits);
+          }
         });
 
       skillsContainer.empty();

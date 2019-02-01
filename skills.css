@@ -9,10 +9,6 @@ body.logged-in p.google-login-link {
   text-align: left !important;
 }
 
-.th7, .th8, .td7, .td8 {
-  display: none;
-}
-
 .uwp-account {padding: 10px;}
 
 .uwp_form_radio_row {
@@ -89,14 +85,6 @@ div.upme-advanced_skills + div.upme-clear {
   line-height: 25px;
   margin-bottom: -1px;
   margin-left: -75px;
-  /*Causing Windows Problems*/
-  /*border-bottom: 1px dotted #DBDBDB;*/
-}
-
-label.upme-checkbox input[title="Basic Skills"] {
-  /*float:right;
-  border-bottom: 1px dotted #DBDBDB;
-  margin-right: 110px;*/
 }
 
 label[for="basic_skills-143"],label[for="advanced_skills-143"],label[for="learn_skills-143"] {
@@ -141,17 +129,6 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-div.upme-basic_skills {
-  /*Improves display on Mac but causes problems on Windows*/
-  /*margin-top: 1px;*/
-}
-
-.upme-field-value span {
-  /*Casts too wide a net*/
-  /*margin-left: -75px;*/
-  /*line-height: 25px;*/
-}
-
 .basic-label {
   width: 200px !important;
   margin-left: 45px;
@@ -171,12 +148,8 @@ label.upme-checkbox {
 }
 
 /* --------------------------------------------------------------------- */
-/* Little display tweaks.                                                */
+/* Little display tweaks. (Most of these are on the directory page.)     */
 /* --------------------------------------------------------------------- */
-
-#usertable {
-  overflow-x: scroll;
-}
 
 .page-numbers.current {
   display: inline-block;
@@ -197,6 +170,18 @@ label.upme-checkbox {
 
 .userlistfooter > .csvlink {
   margin-left: 7px;
+}
+
+/* --------------------------------------------------------------------- */
+/* Reformat directory table.                                             */
+/* --------------------------------------------------------------------- */
+
+#usertable {
+  overflow-x: scroll;
+}
+
+#usertable .th2, #usertable .td2 {
+  border-left: none; /* Don't visually separate the avatar image and user details. */
 }
 
 /* --------------------------------------------------------------------- */
