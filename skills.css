@@ -1,0 +1,734 @@
+.uwp-login, .uwp-registration, .uwp-forgot, .uwp-account {max-width: none;}
+
+/*Hide Google Login from Logged-In Users*/
+body.logged-in p.google-login-link {
+  display:none;
+}
+
+#filter_buttons {
+  text-align: left !important;
+}
+
+.th7, .th8, .td7, .td8 {
+  display: none;
+}
+
+.uwp-account {padding: 10px;}
+
+.uwp_form_radio_row {
+  width: 100%;
+}
+
+.uwp_form_radio_row, label {
+    float: left;
+
+
+}
+
+.uwp-radio {
+    color:#ffffff;
+    float:left;
+
+
+}
+
+.uwp-radios {
+    /*color:#f1f1f1;*/
+    font-size:12px;
+    float:right;
+
+
+
+
+}
+
+.uwp-clear {
+    clear:both;
+}
+
+
+
+input.uwp-radio {
+    font-size: 12px;
+    margin-right:45px;
+    float:right;
+
+}
+
+.container, .infinite-footer-container, .page-template-template-builder-php .entry-content > .twitter-share {
+    max-width: none;
+}
+
+.upme-edit.upme-basic_skills {
+  float:left;
+  width: 560px;
+  clear:both;
+}
+
+.upme-edit.upme-advanced_skills {
+  float:left;
+  width: 10%;
+}
+
+.upme-edit.upme-learn_skills {
+  float:left;
+  width: 200px;
+}
+
+div.upme-basic_skills + div.upme-clear {
+  clear:none !important;
+}
+
+div.upme-advanced_skills + div.upme-clear {
+  clear:none !important;
+}
+
+.advanced-label {
+  color: rgba(0,0,0,0);
+  font-size: 0px;
+  line-height: 25px;
+  margin-bottom: -1px;
+  margin-left: -75px;
+  /*Causing Windows Problems*/
+  /*border-bottom: 1px dotted #DBDBDB;*/
+}
+
+label.upme-checkbox input[title="Basic Skills"] {
+  /*float:right;
+  border-bottom: 1px dotted #DBDBDB;
+  margin-right: 110px;*/
+}
+
+label[for="basic_skills-143"],label[for="advanced_skills-143"],label[for="learn_skills-143"] {
+  display:none;
+}
+
+label[for^="basic_skills-"],label[for^="advanced_skills-"],label[for^="learn_skills-"] {
+  display:none;
+}
+
+input[type="checkbox"] {
+  font-size: 14px;
+  line-height: 20px !important;
+}
+
+.upme-icon-arrow-down {
+    content:none !important;
+}
+
+.upme-icon-arrow-down:before {
+    content:none !important;
+}
+
+.upme-icon-arrow-up {
+    content:none !important;
+}
+
+.upme-icon-arrow-up:before {
+    content:none !important;
+}
+
+.show-skills-button-selected {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+}
+
+.upme-separator-collapse-icon {
+  margin-right: 5px;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div.upme-basic_skills {
+  /*Improves display on Mac but causes problems on Windows*/
+  /*margin-top: 1px;*/
+}
+
+.upme-field-value span {
+  /*Casts too wide a net*/
+  /*margin-left: -75px;*/
+  /*line-height: 25px;*/
+}
+
+.basic-label {
+  width: 200px !important;
+  margin-left: 45px;
+}
+
+.spacing-label {
+  width: 200px !important;
+  /*border-bottom: 1px dotted #DBDBDB;*/
+}
+
+.advanced-label-instruction {
+  width:150px !important;
+}
+
+label.upme-checkbox {
+  border-bottom: 1px dotted #DBDBDB;
+}
+
+/* --------------------------------------------------------------------- */
+/* Little display tweaks.                                                */
+/* --------------------------------------------------------------------- */
+
+#usertable {
+  overflow-x: scroll;
+}
+
+.page-numbers.current {
+  display: inline-block;
+}
+
+.upme-field-value a[href], .vcard td[class*="email"] a[href], .vcard td[class*="phone"] a[href] {
+  font-weight: normal;
+  border-bottom: 1px dotted;
+}
+
+.userlistfooter > div {
+  padding: 1rem 0.5rem 0 0;
+}
+
+.userlistfooter > .tablenav {
+  padding-right: 7px;
+}
+
+.userlistfooter > .csvlink {
+  margin-left: 7px;
+}
+
+/* --------------------------------------------------------------------- */
+/* Reformat filter and search cards.                                     */
+/* --------------------------------------------------------------------- */
+
+.filter-search-container {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 1fr;
+  -ms-grid-columns: 1fr;
+}
+
+.search-box, .filters {
+  margin: 0 0 1.5rem;
+  padding: 7px;
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+}
+
+.search-box {
+  grid-row: 1 / 2;
+  -ms-grid-row: 1;
+}
+
+.filters {
+  grid-row: 2 / 3;
+  -ms-grid-row: 2;
+}
+
+#userlist .search-box {
+  width: auto;
+  max-width: 100%;
+}
+
+#userlist .filter-search-container fieldset {
+  margin: 0 0 1rem;
+  padding: 0;
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 1fr 2rem 1fr;
+  -ms-grid-columns: 1fr 2rem 1fr;
+  align-items: center;
+}
+
+.filter-search-container label {
+  grid-column: 1 / 2;
+  -ms-grid-column: 1;
+}
+
+.filter-search-container select {
+  height: 3.925rem;
+  padding: 0 0.8rem;
+  grid-column: 3 / 4;
+  -ms-grid-column: 3;
+}
+
+#userlist .search-box fieldset {
+  grid-template-columns: 1fr;
+  -ms-grid-columns: 1fr;
+}
+
+#search-input {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+}
+
+.filter-search-title {
+  padding: 7px;
+  margin: -7px -7px 1.5rem;
+  color: #666;
+  background: #eee;
+  font-weight: bold;
+}
+
+.filter-search-container .btn, .btn[name="csvsubset"] {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  margin: 0 0 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  border-radius: 0.4rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.filter-search-container .btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.filter-search-container .btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.filter-search-container .btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.filter-search-container .btn-secondary:hover {
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+input[name="csvsubset"] {
+  width: 100%;
+}
+
+.btn-info[name="csvsubset"] {
+  position: relative;
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  z-index: 100;
+}
+
+.btn-info[name="csvsubset"]:hover {
+  color: #fff;
+  background-color: #138496;
+  border-color: #117a8b;
+}
+
+#filter_buttons, #search-submit {
+  margin: 0;
+}
+
+#userlist #filter_buttons {
+  padding: 0;
+}
+
+/* If we're not on a tiny screen. */
+@media (min-width: 992px) {
+  .filter-search-container {
+    display: grid;
+    grid-template-columns: 1fr 2rem 1fr;
+    -ms-grid-columns: 1fr 2rem 1fr;
+  }
+
+  .search-box, .filters {
+    grid-row: 1 / 2;
+    -ms-grid-row: 1;
+  }
+
+  .search-box {
+    grid-column: 3 / 4;
+    -ms-grid-column: 3;
+  }
+
+  .filters {
+    grid-column: 1 / 2;
+    -ms-grid-column: 1;
+  }
+
+  #userlist .filter-search-container fieldset {
+    grid-template-columns: 1fr 2rem 3fr;
+    -ms-grid-columns: 1fr 2rem 3fr;
+  }
+
+  #userlist .search-box {
+    max-width: calc(48rem + 14px);
+  }
+
+  #userlist .search-box fieldset {
+    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+  }
+
+  .btn[name="csvsubset"] {
+    width: auto;
+    margin: 8px;
+    float: left;
+  }
+
+  #user_navigation {
+    margin-top: -4.6rem;
+  }
+}
+
+/* --------------------------------------------------------------------- */
+/* Display skills as tags.                                               */
+/* --------------------------------------------------------------------- */
+.upme-skills-values {
+  width: 100%;
+}
+
+/* If we're on a large screen. */
+@media (min-width: 992px) {
+  .upme-skills-values {
+    width: 66%;
+  }
+}
+
+.upme-field-value .skill-tag, .basic_skills .skill-tag, .advanced_skills .skill-tag {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  border-radius: .35rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  float: none;
+  width: auto;
+  margin: 0.2rem;
+  color: #666;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.upme-skills-values .skill-tag {
+  width: 100%; /* Only for tiny screens. */
+  margin-left: 0; /* Ditto. */
+  margin-right: 0; /* Ditto. */
+
+  /* Since the tooltips don't work properly in the editing page, we've turned them off, so don't make it look like clicking does something. */
+  cursor: inherit;
+}
+
+.upme-field-value .skill-tag:focus, .basic_skills .skill-tag:focus, .advanced_skills .skill-tag:focus,
+.upme-field-value .skill-tag:hover, .basic_skills .skill-tag:hover, .advanced_skills .skill-tag:hover {
+  border: 1px solid #999;
+}
+
+/* Since the tooltips don't work properly in the editing page, we've turned them off, so don't make it look like clicking does something. */
+.upme-skills-values .skill-tag:focus, .upme-skills-values .skill-tag:hover {
+  border: 1px solid transparent;
+}
+
+.skill-tag.skill-administration, .skill-administration .skill-tag-tooltip-tag {
+  background-color: rgba(213, 94, 0, 0.2);
+}
+
+.skill-tag.skill-public, .skill-public .skill-tag-tooltip-tag {
+  background-color: rgba(0, 158, 115, 0.2);
+}
+
+.skill-tag.skill-technical, .skill-technical .skill-tag-tooltip-tag {
+  background-color: rgba(240, 228, 66, 0.2);
+}
+
+.skill-tag.skill-systems, .skill-systems .skill-tag-tooltip-tag {
+  background-color: rgba(230, 159, 0, 0.2);
+}
+
+.skill-tag.skill-subject, .skill-subject .skill-tag-tooltip-tag {
+  background-color: rgba(0, 114, 178, 0.2);
+}
+
+.skill-tag.skill-scholarly, .skill-scholarly .skill-tag-tooltip-tag {
+  background-color: rgba(80, 60, 170, 0.2);
+}
+
+.skill-tag.skill-unknown, .skill-unknown .skill-tag-tooltip-tag {
+  border: 1px solid rgba(136, 136, 136, 0.5) !important;
+  background-color: #FFF;
+}
+
+.upme-skills-values {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: auto 1fr 1fr 1fr; /* Basically, IE isn't going to adapt based on media queries. */
+}
+
+.skill-header.skill-name {
+  padding-left: 0.2rem;
+  display: none; /* Overridden on not-tiny screens. */
+}
+
+.skill-header:not(.skill-name) {
+  text-align: center;
+}
+
+.skill-cell {
+  overflow-x: hidden;
+}
+
+.skill-name, .skill-basic, .skill-advanced, .skill-learn {
+  padding: 0.4rem 0;
+}
+
+.skill-basic, .skill-advanced, .skill-learn {
+  display: grid;
+  display: -ms-grid;
+  align-items: center;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.skill-name {
+  grid-column: 1 / 5;
+  -ms-grid-column: 1;
+
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+}
+
+.skill-basic {
+ grid-column: 1 / 2;
+ -ms-grid-column: 2;
+}
+
+.skill-advanced {
+  grid-column: 2 / 3;
+  -ms-grid-column: 3;
+}
+
+.skill-learn {
+  background-color: rgba(0, 0, 0, 0.02);
+
+  grid-column: 3 / 4;
+  -ms-grid-column: 4;
+}
+
+/* If we're not on a tiny screen. */
+@media (min-width: 576px) {
+  .upme-skills-values .skill-tag {
+    width: auto;
+    margin: 0.2rem; /* This basically duplicates a rule on `.skill-tag` that's overridden on small screens... so that's not ideal. */
+  }
+
+  .upme-skills-values {
+    grid-template-columns: auto 1fr 1fr 1fr;
+  }
+
+  .skill-header.skill-name {
+    display: inherit;
+  }
+
+  .skill-name, .skill-basic, .skill-advanced, .skill-learn {
+    padding: 0;
+  }
+
+  .skill-basic, .skill-advanced, .skill-learn {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+  }
+
+  .skill-name {
+    grid-column: 1 / 2;
+  }
+
+  .skill-basic {
+    grid-column: 2 / 3;
+  }
+
+  .skill-advanced {
+    grid-column: 3 / 4;
+  }
+
+  .skill-learn {
+    grid-column: 4 / 5;
+  }
+}
+
+/* --------------------------------------------------------------------- */
+/* Tooltip styles.                                                       */
+/* --------------------------------------------------------------------- */
+.tooltip {
+  position: absolute;
+  background: #FFF;
+  color: #666;
+  border: 1px solid #FFF;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 1.36rem;
+}
+
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 10px;
+  border-color: #FFF;
+}
+
+.tooltip .tooltip-arrow:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  border-style: solid;
+  margin: 11px;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.tooltip .tooltip-inner {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: none;
+  border-right: none;
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+.tooltip[x-placement^="top"] {
+  margin-bottom: 10px;
+}
+
+.tooltip[x-placement^="top"] .tooltip-arrow {
+  bottom: -10px;
+  left: calc(50% - 10px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="top"] .tooltip-arrow:before {
+  top: -20px;
+  left: -21px;
+}
+
+.tooltip[x-placement^="top"] .tooltip-arrow, .tooltip[x-placement^="top"] .tooltip-arrow:before {
+  border-width: 10px 10px 0 10px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.tooltip[x-placement^="bottom"] {
+  margin-top: 10px;
+}
+
+.tooltip[x-placement^="bottom"] .tooltip-arrow {
+  top: -10px;
+  left: calc(50% - 10px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="bottom"] .tooltip-arrow:before {
+  bottom: -20px;
+  left: -21px;
+}
+
+.tooltip[x-placement^="bottom"] .tooltip-arrow, .tooltip[x-placement^="bottom"] .tooltip-arrow:before {
+  border-width: 0 10px 10px 10px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+.tooltip[x-placement^="right"] {
+  margin-left: 10px;
+}
+
+.tooltip[x-placement^="right"] .tooltip-arrow {
+  left: -10px;
+  top: calc(50% - 10px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip[x-placement^="right"] .tooltip-arrow:before {
+  top: -21px;
+  right: -20px;
+}
+
+.tooltip[x-placement^="right"] .tooltip-arrow, .tooltip[x-placement^="right"] .tooltip-arrow:before {
+  border-width: 10px 10px 10px 0;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.tooltip[x-placement^="left"] {
+  margin-right: 10px;
+}
+
+.tooltip[x-placement^="left"] .tooltip-arrow {
+  right: -10px;
+  top: calc(50% - 10px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip[x-placement^="left"] .tooltip-arrow:before {
+  top: -21px;
+  left: -20px;
+}
+
+.tooltip[x-placement^="left"] .tooltip-arrow, .tooltip[x-placement^="left"] .tooltip-arrow:before {
+  border-width: 10px 0 10px 10px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.skill-tag-tooltip hr {
+  margin: 0.5rem 0;
+}
+
+.skill-tag-tooltip-title {
+  display: block;
+}
+
+.skill-tag-tooltip-tag {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 1.7rem;
+}
+
+.skill-tag-tooltip-links {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.skill-tag-tooltip-link {
+  color: #666;
+  border-bottom: 1px dotted #666;
+  font-weight: normal;
+}
+
+.skill-tag-tooltip-link .svg-inline--fa.fa-w-18 {
+  width: 0.75em;
+}
