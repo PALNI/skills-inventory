@@ -1,27 +1,47 @@
-jQuery(document).ready(function( $ ) {
+jQuery(function($) {
+  window.prioritySkills = [
+    'Assessment',
+    'Collection Management',
+    'Engaging Stakeholders',
+    'Financial Management',
+    'Grant Writing',
+    'Information Literacy',
+    'Institutional Repositories',
+    'Instructional Technology',
+    'Leadership Development',
+    'Library Marketing',
+    'Library Space Design',
+    'Scholarly Communication',
+    'Software Development',
+  ];
 
-  //Make discourse links hyperlinks in profiles (any field value that is also a URL)
+  // Make class-name string of priority skills.
+  window.prioritySkillsClassSelector = prioritySkills
+    .map(function(s) {
+      return '.skill-' + s.replace(/\s/g, '-').toLowerCase();
+    })
+    .join(', ');
+
+  window.prioritySkillsDataSelector = prioritySkills
+    .map(function(s) {
+      return '.skill-tag[data-name="' + s + '"]'
+    })
+    .join(', ');
+
+  // Make discourse links hyperlinks in profiles (any field value that is also a URL)
   $('.upme-field-value').each(function(){
-        // Get the content
-        var str = $(this).html();
-        // Set the regex string
-        var regex = /(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/ig
-        // Replace plain text links by hyperlinks
-        var replaced_text = str.replace(regex, "<a href='$1' target='_blank'>$1</a>");
-        // Echo link
-        $(this).html(replaced_text);
-    });
-
-
-
-  function collapse_separator_fields_upwards(obj){
-    var ele_id = obj.attr('id');
-    //obj.parent().parent().find('.'+ele_id+'-field').slideUp().addClass('upme-display-none');
-  }
+      // Get the content
+      var str = $(this).html();
+      // Set the regex string
+      var regex = /(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/ig
+      // Replace plain text links by hyperlinks
+      var replaced_text = str.replace(regex, "<a href='$1' target='_blank'>$1</a>");
+      // Echo link
+      $(this).html(replaced_text);
+  });
 
   //Appends span for clickable button to show priority skills
   $("div.upme-skills_separator").append('<span id="upme-separator-icon-skills_separator_priority" class="upme-icon upme-separator-collapse-icon upme-icon-arrow-up">Show Only Priority Skills</span>');
-
 
   //Adds labels for beginning/advanced/want to learn checkboxes
   $("div.upme-skills_separator").after( '<div class="instruction-wrapper upme-edit" style="clear:both"><div class="spacing-label" style="float:left;width: 15%;text-align:center;color:rgba(0,0,0,0)">#</div><div class="basic-label" style="float:left;width: 30%;text-align:center">Basic</div><div class="advanced-label-instruction" style="float:left;width: 20%">Advanced</div><div class="learn-label" style="float:left;width: 35%">Want to Learn</div></div>' );
@@ -52,7 +72,8 @@ jQuery(document).ready(function( $ ) {
    //$('.upme-field-value').find("input[value='[A] - Library Space Design']").closest('label').show();
 
     $('.skill-cell:not(.skill-header)').hide();
-    $('.skill-grant-writing, .skill-engaging-stakeholders, .skill-assessment, .skill-financial-management, .skill-instructional-technology, .skill-information-literacy, .skill-library-marketing, .skill-collection-management, .skill-institutional-repositories, .skill-scholarly-communication, .skill-software-development, .skill-leadership-development, .skill-library-space-design').show();
+    //$('.skill-grant-writing, .skill-engaging-stakeholders, .skill-assessment, .skill-financial-management, .skill-instructional-technology, .skill-information-literacy, .skill-library-marketing, .skill-collection-management, .skill-institutional-repositories, .skill-scholarly-communication, .skill-software-development, .skill-leadership-development, .skill-library-space-design').show();
+    $(prioritySkillsClassSelector).show();
 
     //To do - make the 'show all skills' button appear unselected;
     $("#upme-separator-icon-skills_separator").removeClass('show-skills-button-selected');
@@ -118,6 +139,12 @@ jQuery(document).ready(function( $ ) {
   };
 
   // ---------------------------------------------------------------------------
+  // Load FontAwesome, since we're going to want it, but don't care when it loads.
+  // ---------------------------------------------------------------------------
+
+  loadScripts(['https://use.fontawesome.com/releases/v5.6.3/js/all.js'], () => {});
+
+  // ---------------------------------------------------------------------------
   // Reformat search and filter tools.
   // ---------------------------------------------------------------------------
   (function() {
@@ -153,14 +180,13 @@ jQuery(document).ready(function( $ ) {
     container.find('input[type="submit"]').addClass('btn');
   })();
 
-
   // ---------------------------------------------------------------------------
-  // Rewrite the profile display page.
+  // Rewrite the skill tags profile display and directory pages.
   // ---------------------------------------------------------------------------
-  var makeSkillTags = function(skillsContainer) {
-    skillsContainer = $(skillsContainer);
+  var makeSkillTags = function(skillsContainers) {
+    $(skillsContainers).each(function(i, skillsContainer) {
+      skillsContainer = $(skillsContainer);
 
-    if (skillsContainer.length) {
       var skillTags = skillsContainer
         .html()
         .split(/(?:(?:\,|\<br\>)\s?\[)\s*/g)
@@ -180,8 +206,8 @@ jQuery(document).ready(function( $ ) {
           var category2 = $(e2).attr('data-category');
 
           if (category1 == category2) {
-            var name1 = $(e1).attr('data-name');
-            var name2 = $(e2).attr('data-name');
+            var name1 = $(e1).attr('data-name').toLowerCase();
+            var name2 = $(e2).attr('data-name').toLowerCase();
 
             if (name1 == name2) { // Should never happen.
               return 0;
@@ -199,7 +225,7 @@ jQuery(document).ready(function( $ ) {
         .forEach(function(s) {
           skillsContainer.append(s);
         });
-    }
+    });
   };
 
   var buildSkillTag = function(bits) {
@@ -245,6 +271,144 @@ jQuery(document).ready(function( $ ) {
   makeSkillTags($('.upme-view.upme-basic_skills .upme-field-value, .basic_skills'));
   makeSkillTags($('.upme-view.upme-advanced_skills .upme-field-value, .advanced_skills'));
   makeSkillTags($('.upme-view.upme-learn_skills .upme-field-value'));
+
+  // ---------------------------------------------------------------------------
+  // Rewrite the directory table.
+  // ---------------------------------------------------------------------------
+  (function() {
+    // Set some things up.
+    var directory = $('#usertable');
+
+    // Get searched and filtered skill selectors.
+    var searchFragment = $('#search-input').val(),
+        basicFilterValue = $('#filter_basic_skills').val(),
+        advancedFilterValue = $('#filter_advanced_skills').val();
+
+    var basicFilterValueBits = basicFilterValue.split(/\s?\[?(\w)\] - /),
+        advancedFilterValueBits = advancedFilterValue.split(/\s?\[?(\w)\] - /);
+
+    var searchFragmentSelector = '',
+        basicFilterSelector = '',
+        advancedFilterSelector = '',
+        skillSearchSelector = [];
+
+    if (searchFragment) {
+      searchFragmentSelector = '.skill-tag[data-name*="' + searchFragment.replace(/"/g, '') + '"]';
+
+      skillSearchSelector.push(searchFragmentSelector);
+    }
+
+    if (basicFilterValueBits[2]) {
+      basicFilterSelector = '.basic_skills .skill-tag[data-name="' + basicFilterValueBits[2] + '"]';
+
+      skillSearchSelector.push(basicFilterSelector);
+    }
+
+    if (advancedFilterValueBits[2]) {
+      advancedFilterSelector = '.advanced_skills .skill-tag[data-name="' + advancedFilterValueBits[2] + '"]';
+
+      skillSearchSelector.push(advancedFilterSelector);
+    }
+
+    skillSearchSelector = skillSearchSelector.join(', ');
+
+    // Remove the 'Avatar', 'Title', 'Institution', 'Work Email', and 'Contact Phone' headers.
+    directory.find('.th1, .th3, .th4, .th5, .th6').remove();
+
+    // Remove links from skill column headers.
+    directory.find('.th7 a, .th8 a').removeAttr('href');
+
+    // Go row by row.
+    directory.find('tbody tr').each(function(i, row) {
+      row = $(row);
+
+      // Collect avatar, title, institution, email, and phone number into 'Name' cell.
+      var avatar = row.find('img.avatar'),
+          name = row.find('.display_name'),
+          title = row.find('.description').remove().text().trim(),
+          institution = row.find('.palni_institution').remove().text().trim(),
+          email = row.find('.upme_work_email').remove().text().trim(),
+          phone = row.find('.contact_phone').remove().text().trim();
+
+      row.find('td.avatar').remove();
+
+      name.append(avatar);
+
+      if (title) {
+        name.append('<br>').append(title);
+      }
+
+      if (institution) {
+        name.append('<br>').append(institution);
+      }
+
+      if (email) {
+        name.append('<br>').append($('<span>').addClass('email-wrapper').append(email));
+      }
+
+      if (phone) {
+        name.append('<br>').append($('<span>').addClass('phone-wrapper').append(phone));
+      }
+
+      var skillTags = row.find('.skill-tag'),
+          prioritySkillTags = row.find(prioritySkillsDataSelector),
+          searchSkillTags = row.find(skillSearchSelector),
+          emphasizedSkillTags = prioritySkillTags.add(searchSkillTags);
+
+      // Add icons to priority skills and the searched skill) if there is one).
+      // Probably want to do this for priority skill tags in other parts of the site. //!
+      prioritySkillTags.each(function(i, s) {
+        $(s).addClass('skill-tag-priority').prepend($('<i class="fas fa-star"></i>'));
+      });
+
+      searchSkillTags.each(function(i, s) {
+        $(s).addClass('skill-tag-search').prepend($('<i class="fas fa-search"></i>'));
+      });
+
+      // Move priority and search skill tags to the beginning of the list.
+      // Truncate list and add link to expand.
+      var emphasizeSkillTags = function(container) {
+        container = $(container);
+
+        container
+          .find('.skill-tag-priority')
+          .prependTo(container);
+
+        container
+          .find('.skill-tag-search')
+          .prependTo(container);
+
+        var skillTags = container
+          .find('.skill-tag');
+
+        var hiddenTags = skillTags
+          .slice(10)
+          .hide();
+
+        hiddenTags
+          .first()
+          .before(
+            $('<a></a>')
+              .text('\u2026and ' + hiddenTags.length + ' more.')
+              .addClass('skill-toggle')
+              .click(function(event) {
+                $(event.target).hide();
+
+                this.show();
+              }.bind(hiddenTags))
+          );
+      };
+
+      emphasizeSkillTags(row.find('.basic_skills'));
+      emphasizeSkillTags(row.find('.advanced_skills'));
+      //!
+
+
+      // Only display the priority skills and the searched skill (if there is one).
+      // skillTags.hide();
+      // prioritySkillTags.show();
+    });
+  })();
 
   // ---------------------------------------------------------------------------
   // Rewrite the profile edit page.
@@ -352,8 +516,8 @@ jQuery(document).ready(function( $ ) {
         basicLink = $('<a></a>'),
         advancedLink = $('<a></a>');
 
-    var basicUrl = '/members/?filter=1&basic_skills=' + encodeURIComponent('[' + category + '] - ' + name),
-        advancedUrl = '/members/?filter=1&advanced_skills=' + encodeURIComponent('[' + category + '] - ' + name);
+    var basicUrl = '/?page_id=19&filter=1&basic_skills=' + encodeURIComponent('[' + category + '] - ' + name),
+        advancedUrl = '/?page_id=19&filter=1&advanced_skills=' + encodeURIComponent('[' + category + '] - ' + name);
 
     el.append(title, $('<hr>'), links);
     title.append($('<span class="skill-tag-tooltip-tag">&nbsp;</span>'));
@@ -408,7 +572,6 @@ jQuery(document).ready(function( $ ) {
   loadScripts(['https://unpkg.com/popper.js/dist/umd/popper.min.js'], function() {
     loadScripts([
       'https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js',
-      'https://use.fontawesome.com/releases/v5.6.3/js/all.js',
     ], function() {
       var container = $('#skill-tag-tooltips');
 
@@ -419,7 +582,7 @@ jQuery(document).ready(function( $ ) {
       $(document.body).append(container);
 
       // The tooltips don't seem to work in the grid layout that the editing page uses.
-      $('.upme-field-value .skill-tag, .basic-skills .skill-tag, .advanced-skills .skill-tag').not('.upme-skills-values .skill-tag')
+      $('.upme-field-value .skill-tag, .basic_skills .skill-tag, .advanced_skills .skill-tag').not('.upme-skills-values .skill-tag')
         .each(function (i, el) {
           $(el).removeAttr('title');
 
@@ -459,7 +622,7 @@ jQuery(document).ready(function( $ ) {
   // ---------------------------------------------------------------------------
 
   (function() {
-    var emailFields = $('.upme-field[class*="email"] .upme-field-value, .vcard td[class*="email"]');
+    var emailFields = $('.upme-field[class*="email"] .upme-field-value, .vcard .email-wrapper');
 
     emailFields.each(function(i, s) {
       s = $(s);
@@ -478,7 +641,7 @@ jQuery(document).ready(function( $ ) {
       s.append($('<a></a>').text(emailAddress).attr('href', 'mailto:' + emailAddress));
     });
 
-    var phoneFields = $('.upme-field[class*="phone"] .upme-field-value, .vcard td[class*="phone"]');
+    var phoneFields = $('.upme-field[class*="phone"] .upme-field-value, .vcard .phone-wrapper');
 
     phoneFields.each(function(i, s) {
       s = $(s);
@@ -499,8 +662,3 @@ jQuery(document).ready(function( $ ) {
   })();
 
 });
-
-function collapse_separator_fields_upwards(obj){
-    var ele_id = obj.attr('id');
-    //obj.parent().parent().find('.'+ele_id+'-field').slideUp().addClass('upme-display-none');
-  }
