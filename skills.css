@@ -160,9 +160,17 @@ label.upme-checkbox {
   border-bottom: 1px dotted;
 }
 
+.svg-inline--fa.fa-external-link-alt {
+  width: 0.75em;
+}
+
 .svg-inline--fa.fa-search, .svg-inline--fa.fa-star {
   width: 0.75em;
   margin-right: 0.5rem;
+}
+
+.tooltip .svg-inline--fa.fa-star {
+  margin-right: 0;
 }
 
 .userlistfooter > div {
@@ -177,15 +185,63 @@ label.upme-checkbox {
   margin-left: 7px;
 }
 
+div.upme-wrap div.upme-field-value img {
+  max-height: 300px;
+}
+
 /* --------------------------------------------------------------------- */
 /* Reformat directory table.                                             */
 /* --------------------------------------------------------------------- */
 
-#usertable {
-  overflow-x: scroll;
+#usertable, #usertable thead, #usertable .thead, #usertable tbody, #usertable .tbody {
+  display: block;
 }
 
-#usertable th {
+#usertable {
+  width: 100%;
+  margin: auto;
+  clear: both;
+
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  border-spacing: 0;
+
+  z-index: 100;
+}
+
+#usertable thead, #usertable .thead { /* This does not seem to be working. */
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+
+  will-change: transform;
+}
+
+#usertable tr, #usertable .tr {
+  width: 100%;
+  padding: 0;
+  display: grid;
+  display: -ms-grid;
+  float: none;
+  grid-template-columns: 30% 35% 35%;
+  -ms-grid-columns: 30% 35% 35%;
+}
+
+#usertable .th, #usertable .td {
+  padding: 7px 7px 8px;
+  overflow: hidden;
+
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+
+  text-align: left;
+  line-height: 1.3em;
+}
+
+#usertable .th {
+  color: #222;
+  background-color: #eee;
+
   white-space: nowrap;
 }
 
@@ -193,16 +249,26 @@ label.upme-checkbox {
   padding-left: 11rem;
 }
 
+#usertable .th2, #usertable .td2, #usertable .th7, #usertable .td7, #usertable .th8, #usertable .td8 {
+  grid-row: 1 / 2;
+  -ms-grid-row: 1;
+}
+
 #usertable .th2, #usertable .td2 {
-  width: 20%;
+  grid-column: 1 / 2;
+  -ms-grid-column: 1;
 }
 
 #usertable .th7, #usertable .td7 {
-  width: 40%;
+  grid-column: 2 / 3;
+  -ms-grid-column: 2;
 }
 
 #usertable .th8, #usertable .td8 {
-  width: 40%;
+  grid-column: 3 / 4;
+  -ms-grid-column: 3;
+
+  border-right: none;
 }
 
 #usertable .th7 a, #usertable .th8 a {
@@ -211,7 +277,7 @@ label.upme-checkbox {
   font-weight: normal;
 }
 
-#usertable .avatar {
+#usertable .avatar.jsd {
   max-width: 9rem;
   margin-left: calc(-11rem + 7px);
   padding: 0.5rem;
@@ -221,6 +287,104 @@ label.upme-checkbox {
   border: 1px solid #ddd;
 
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#usertable .small-screen-label {
+  display: none;
+}
+
+/* If we're not on a tiny screen. */
+@media not (max-width: 991px) {
+  #usertable tr:last-child td, #usertable .tr:last-child .td {
+    border-bottom: none;
+  }
+}
+
+/* If we are on a tiny screen. */
+@media (max-width: 991px) {
+  #usertable {
+    background-color: #f8f8f8;
+  }
+
+  #usertable thead, #usertable .thead {
+    position: static;
+
+    will-change: auto;
+  }
+
+  #usertable tr, #usertable .tr {
+    width: calc(100% - 2rem);
+    margin: 2rem 1rem;
+    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+
+    border: 1px solid #ddd;
+  }
+
+  #usertable tbody tr, #usertable .tbody .tr {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  #usertable td, #usertable .td, #usertable th, #usertable .th {
+    border-right: none;
+  }
+
+  #usertable td, #usertable .td {
+    position: relative;
+
+    border: none;
+  }
+
+  #usertable td:empty, #usertable .td:empty {
+    display: none;
+  }
+
+  #usertable .th2 {
+    border: none;
+  }
+
+  #usertable .th7, #usertable .th8 {
+    display: none;
+  }
+
+  #usertable .th2, #usertable .td2 {
+    grid-column: 1 / 2;
+    -ms-grid-column: 1;
+    grid-row: 1 / 2;
+    -ms-grid-row: 1;
+  }
+
+  #usertable .th7, #usertable .td7 {
+    grid-column: 1 / 2;
+    -ms-grid-column: 1;
+    grid-row: 2 / 3;
+    -ms-grid-row: 2;
+  }
+
+  #usertable .th8, #usertable .td8 {
+    grid-column: 1 / 2;
+    -ms-grid-column: 1;
+    grid-row: 3 / 4;
+    -ms-grid-row: 3;
+  }
+
+  #usertable .small-screen-label {
+    margin: 1rem -1rem;
+    padding: 8px calc(7px + 1rem);
+    display: block;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.579em;
+
+    background: #eee;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #usertable .odd, #usertable .even, #usertable .odd .td, #usertable .even .td {
+    background-color: #FFF;
+  }
 }
 
 /* --------------------------------------------------------------------- */
@@ -342,7 +506,7 @@ label.upme-checkbox {
   border-color: #545b62;
 }
 
-input[name="csvsubset"] {
+.btn[name="csvsubset"] {
   width: 100%;
 }
 
@@ -791,7 +955,7 @@ a.skill-toggle {
   border-radius: 50%;
 }
 
-.skill-tag-tooltip-links {
+.skill-tag-tooltip-links, .skill-tag-tooltip-priority-skill-note {
   display: block;
   font-size: 1.2rem;
 }
@@ -801,7 +965,9 @@ a.skill-toggle {
   border-bottom: 1px dotted #666;
   font-weight: normal;
 }
-
-.skill-tag-tooltip-link .svg-inline--fa.fa-w-18 {
-  width: 0.75em;
+/* This odd bit is necessary for the tooltips to close on mobile when one taps another part of the page. */
+@media (any-hover: none) {
+  body {
+    cursor: pointer;
+  }
 }
