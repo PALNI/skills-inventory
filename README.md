@@ -30,6 +30,15 @@ And individual profiles created:
 ## Setup Your Own Skills Inventory and Directory in 9 Easy Steps
 
 1.  Set up WordPress and Install Required Plugins
+ - WordPress Settings for Permalinks: Plain (note: you will need to change custom links throughout JavaScript to reflect your actual page numbers)
+ - For User Lists / AMR Users, be sure to set cacheing to update hourly
+ - For UPME:
+ -- Display Name / User Link Options: Link to user profiles
+ -- Profile Permalinks: User ID
+ -- Field for Profile Title: Display Name
+ -- Redirect After Login - View Profile
+ -- Redirect After Registration - View Profile
+ 
 2.  Use Shortcodes to set up UPME pages 
  
  - My Account (Front Page): `[restrict][upme][/restrict]`
