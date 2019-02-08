@@ -1,0 +1,267 @@
+[A] - Strategic Planning and Assessment
+[A] - Budgeting
+[A] - Grant Writing
+[A] - Policy Making
+[A] - Process Improvement
+[A] - Project Management
+[A] - Supervision
+[A] - Program Development
+[A] - Analytics
+[A] - Shared Staffing / Services
+[A] - Organizational Communication
+[A] - Consortial Leadership
+[A] - Management of student workers
+[P] - Bibliographic Instruction
+[P] - Liaison / Subject Specialist
+[P] - Departmental Curriculum
+[P] - Disciplinary Knowledge
+[P] - Embedded Librarianship
+[P] - Faculty Research / Scholarship
+[P] - PALShare Management
+[P] - Reference Services
+[P] - User Experience / Usability Testing
+[P] - Information Behavior / Seeking
+[P] - Instructional Design
+[P] - Instructional Assessment
+[P] - Emerging Research Practices
+[P] - Information Literacy
+[P] - Media Literacy
+[P] - WorldCat Local Configuration
+[P] - Technical Literacy
+[P] - Library Marketing
+[P] - Graphic Design
+[P] - Videography
+[P] - Photography
+[P] - Technical Writing
+[P] - Library Advocacy
+[P] - Web Management / Design
+[P] - Circulation
+[P] - Shared Patrons / Shared Circulation
+[P] - Patron Diversity
+[P] - Course Reserves / E-Reserves
+[P] - Document Delivery 
+[P] - ILLiad
+[P] - WorldShare ILL
+[P] - Reciprocal Borrowing
+[P] - Courier Services
+[P] - Preservation and Conservation
+[P] - Archives and Records Management
+[P] - Digitization
+[P] - Finding Aids
+[P] - Data Curation
+[P] - Special Collections
+[P] - Rare Books
+[P] - Government Documents
+[P] - Shared Print / Repositories
+[P] - Scholarly Communication
+[P] - Knowledge of Information Structure
+[P] - Copyright and Fair Use
+[P] - Intellectual Freedom
+[P] - Intellectual Property Management
+[P] - Author Rights
+[P] - Institutional Repositories
+[P] - Information Policy
+[P] - Privacy advocate/policies
+[T] - Copy Cataloging
+[T] - Original Cataloging
+[T] - Connexion Client
+[T] - Connexion Browser
+[T] - Batch Modification of Records in OCLC
+[T] - WMS Record Manager
+[T] - Serials Holdings Records
+[T] - OCLC KB
+[T] - OCLC License Manager
+[T] - MarcEdit
+[T] - Print Monographs
+[T] - ebooks
+[T] - Rare Book and Manuscript Cataloging
+[T] - Electronic Cartographic Materials
+[T] - BIBCO
+[T] - NACO
+[T] - SACO
+[T] - CONSER
+[T] - Regular Enhance Experience
+[T] - OCLC National Enhance
+[T] - DDC
+[T] - LC
+[T] - Resource Description and Access (RDA)
+[T] - NLM
+[T] - MeSH
+[T] - LCSH
+[T] - MODS
+[T] - METS
+[T] - TEI
+[T] - SuDoc
+[T] - Thesaurus for Graphic Materials
+[T] - Visual Resources Core Metadata (CDWA/VRA)
+[T] - Authority Expertise
+[T] - Art & Architecture Thesaurus
+[T] - Dublin Core
+[T] - Print Continuing Resources (Journals/Looseleafs)
+[T] - Electronic Continuing Resources (Eserials, etc.)
+[T] - Encoded Archival Description Metadata (EAD)
+[T] - Linked Data
+[T] - Data Management
+[T] - ETDs (Electronic Theses and Dissertations)
+[T] - Data Processing
+[T] - Collection Management
+[T] - OCLC Acquisitions Module
+[T] - Demand Driven Acquisitions
+[T] - Collection Development
+[T] - Collaborative Collection Development
+[T] - Licensing Content
+[T] - Serials Control
+[T] - Inventory Control
+[T] - Integrated Research Tools / Environments
+[T] - Knowledge Management for Research
+[S] - System Administration
+[S] - System Design
+[S] - System Analysis
+[S] - Database Management
+[S] - Integrated Library Systems Management
+[S] - CONTENTdm
+[S] - Web/Application Development
+[S] - OCLC Analytics 
+[S] - Mobile Web/Application Design
+[S] - Hardware Troubleshooting
+[S] - Software Configuration
+[S] - OpenURL Resolvers
+[S] - Electronic Resources Management
+[S] - Open Source Software
+[S] - Electronic Invoicing (EDI)
+[S] - Emerging Technologies
+[S] - Drupal
+[S] - WordPress
+[S] - Windows Administration
+[S] - Linux
+[S] - HTML
+[S] - CSS
+[S] - JavaScript/jQuery
+[S] - PHP
+[S] - Python
+[S] - Perl
+[S] - Ruby
+[S] - SQL
+[S] - XSLT
+[S] - APIs/REST
+[U] - Anthropology
+[U] - Art & Art History
+[U] - Asian Studies
+[U] - Biology
+[U] - Black Studies
+[U] - Business/Management/Finance
+[U] - Chemistry & Biochemistry
+[U] - Classical Studies
+[U] - Communication
+[U] - Computer Science
+[U] - Conflict Studies
+[U] - Economics
+[U] - Education Studies
+[U] - Engineering
+[U] - English
+[U] - European Studies
+[U] - Film Studies
+[U] - First-year experiences
+[U] - Geosciences
+[U] - German
+[U] - Health & Medicine
+[U] - History
+[U] - Jewish Studies
+[U] - Kinesiology
+[U] - Latin American & Caribbean Studies
+[U] - LGBT/GLBT/Queer Studies
+[U] - Library Science
+[U] - Mathematics
+[U] - Middle Eastern Studies
+[U] - Modern Languages
+[U] - Music
+[U] - Nursing
+[U] - Philosophy
+[U] - Physical Therapy
+[U] - Physics & Astronomy
+[U] - Political Science
+[U] - Psychology
+[U] - Religious Studies
+[U] - Russian
+[U] - Sociology
+[U] - Spanish
+[U] - Sustainability
+[U] - Theatre
+[U] - Women/Gender Studies
+[T] - Weeding
+[S] - Pro Tools Digital Audio Software
+[S] - Git
+[S] - Proxy Servers/EZProxy
+[S] - Visual Basic
+[S] - OpenSim
+[S] - Arduino
+[P] - Primary Source Bibliographic Instruction
+[U] - French
+[A] - Qualtrics
+[P] - Omeka
+[P] - Zotero
+[P] - Guide on the Side
+[P] - LibGuides
+[U] - Law
+[U] - Korean
+[P] - Digital Literacy
+[U] - Chinese
+[A] - Building Management
+[A] - Renovation planning/implementation
+[A] - New building planning/implementation
+[A] - Fundraising
+[A] - Advocacy
+[A] - Vendor/contract negotiations
+[S] - WorldCat Discovery Configuration
+[S] - OpenRefine
+[P] - social media management
+[S] - Augmented Reality 
+[S] - Gamification
+[S] - 3D Printing 
+[S] - Virtual Reality 
+[S] - COUNTER 
+[S] - SUSHI 
+[S] - Usage Data Harvesting
+[A] - Crisis Management
+[S] - Data Visualization
+[C] - Research Data Licensing / IP
+[C] - Research Data Management Planning
+[C] - Research Data Metadata
+[C] - Research Data Publication Requirements
+[C] - Research Data Citation
+[C] - Research Practices and Workflows
+[C] - Disciplinary Norms and Standards
+[C] - Data Audit and Assessment Tools
+[C] - Discovery Tools and Knowledgebases
+[C] - Database Design and Structure
+[C] - Data Linking and Integration
+[C] - Selection and Appraisal of Datasets
+[C] - Open Access Publishing Platforms
+[C] - Commercial Publishing Platforms
+[C] - Editorial Processes
+[C] - DOI and Persistent URL Standards
+[C] - Funding Agency Requirements
+[C] - Metadata and Discovery
+[C] - PKP Open Journal System (OJS)
+[C] - PKP Open Monograph Press (OMP)
+[C] - Researcher / Faculty Outreach
+[C] - Copyright and Licensing
+[C] - Bibliometrics
+[C] - Altmetrics
+[C] - Impact Factors and Assessment
+[C] - Faculty Promotion and Tenure Policies
+[S] - Digital Preservation
+[S] - Digital Forensics
+[S] - R (Programming Language)
+[A] - Engaging Stakeholders
+[A] - Assessment
+[S] - Software Development
+[A] - Leadership Development
+[A] - Library Space Design
+[A] - Financial Management
+[T] - WMS Metadata
+[P] - Tipasa
+[P] - Moodle
+[P] - Canvas
+[P] - Instructional Technology
+[Z] - Cookies
