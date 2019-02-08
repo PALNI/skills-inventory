@@ -36,17 +36,17 @@ And individual profiles created:
      
      ```
      <?php 
-function amr_add_a_detail_link_type_function (	$linktype, $u, $field ) {
+     function amr_add_a_detail_link_type_function (	$linktype, $u, $field ) {
 		$ID = $u->ID;
 		$url = 'http://yourinventory.org/?page_id=4&viewuser=' . $ID;
 
 		return $url;
-}
+     }
 
-function amr_add_a_detail_link_type ($linktypes) { 
-	$linktypes['detailpagelist2'] = __('detail page using list 2', 'amr_users');
-	return ($linktypes);
-}
+     function amr_add_a_detail_link_type ($linktypes) { 
+	 $linktypes['detailpagelist2'] = __('detail page using list 2', 'amr_users');
+	 return ($linktypes);
+     }
      ```
  - For UPME:
      - Display Name / User Link Options: Link to user profiles
