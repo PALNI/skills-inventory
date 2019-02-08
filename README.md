@@ -5,12 +5,12 @@ This repository contains customization files (JavaScript and CSS) for setting up
 
 ## Requirements
 
--Wordpress 5.0 and above
--amr users (free plugin)
--Custom CSS and Javascript (free plugin, any plugin that enables loading of custom CSS/JavaScript will work)
--Restrict Content (free plugin)
--amr users plus (plugin, not free)
--User Profiles Made Easy (plugin, not free)
+ - Wordpress 5.0 and above
+ - amr users (free plugin)
+ - Custom CSS and Javascript (free plugin, any plugin that enables loading of custom CSS/JavaScript will work)
+ - Restrict Content (free plugin)
+ - amr users plus (plugin, not free)
+ - User Profiles Made Easy (plugin, not free)
 
 ## Recommended Plugins
  - Google Analytics - for tracking usage
