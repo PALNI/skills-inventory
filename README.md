@@ -2,6 +2,9 @@
 
 This repository contains customization files (JavaScript and CSS) used for setting up a WordPress site to serve as a employee directory and inventory of employee skills.  The site was designed for a Library consortia so that employees from multiple institutions could set up personalized profiles and indicate their skills in a searchable directory.
 
+![UPME Custom Fields Configuration](/images/profile.png)
+![UPME Custom Fields Configuration](/images/search.png)
+
 ## Requirements
 
  - Wordpress 5.0 and above
