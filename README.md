@@ -1,16 +1,16 @@
 # WordPress Skills Inventory and Employee Directory
 > Setup instructions and custom CSS and JavaScript for a Skills Inventory and Employee Directory site.
 
-This repository contains customization files (JavaScript and CSS) for setting up a WordPress site to serve as a employee directory and inventory of skills.  The site was designed for a Library consortia so that employees from multiple institutions could set up personalized profiles and indicate their skills in a searchable directory.
+This repository contains customization files (JavaScript and CSS) used for setting up a WordPress site to serve as a employee directory and inventory of skills.  The site was designed for a Library consortia so that employees from multiple institutions could set up personalized profiles and indicate their skills in a searchable directory.
 
 ## Requirements
 
  - Wordpress 5.0 and above
- - amr users (free plugin)
- - Custom CSS and Javascript (free plugin, any plugin that enables loading of custom CSS/JavaScript will work)
- - Restrict Content (free plugin)
- - amr users plus (plugin, not free)
- - User Profiles Made Easy (plugin, not free)
+ - [amr users] (https://wordpress.org/plugins/amr-users/) (free plugin) 
+ - [Custom CSS and Javascript] (free plugin, any plugin that enables loading of custom CSS/JavaScript will work) (https://wordpress.org/plugins/custom-css-and-javascript/)
+ - [Restrict Content] (https://wordpress.org/plugins/restrict-content/) (free plugin)
+ - [amr users plus] (https://wpusersplugin.com/downloads/amr-users-plus/) (plugin, not free)
+ - [User Profiles Made Easy] (https://codecanyon.net/item/user-profiles-made-easy-wordpress-plugin/4109874) (plugin, not free)
 
 ## Recommended Plugins
  - Google Analytics - for tracking usage
