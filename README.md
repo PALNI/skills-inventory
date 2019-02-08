@@ -36,16 +36,13 @@ And individual profiles created:
      
      ```
      <?php 
-// add some additional linktypes - nb must check whether to apply or not  
-// else may interfere with other plugins
-
 function amr_add_a_detail_link_type_function (	$linktype, $u, $field ) {
 		$ID = $u->ID;
 		$url = 'http://yourinventory.org/?page_id=4&viewuser=' . $ID;
 
 		return $url;
 }
-/* --------------------------------------------------------------------------------*/
+
 function amr_add_a_detail_link_type ($linktypes) { 
 	$linktypes['detailpagelist2'] = __('detail page using list 2', 'amr_users');
 	return ($linktypes);
