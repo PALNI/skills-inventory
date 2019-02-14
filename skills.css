@@ -622,7 +622,7 @@ div.upme-wrap div.upme-field-value img {
   margin: 0.2rem;
   color: #666;
   text-transform: none;
-  cursor: pointer;
+  /* cursor: pointer; */ /* Clicking doesn't, atm, do anything. */
   position: relative;
 }
 
