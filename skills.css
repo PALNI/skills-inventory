@@ -600,6 +600,12 @@ div.upme-wrap div.upme-field-value img {
 }
 
 .upme-field-value .skill-tag, .basic_skills .skill-tag, .advanced_skills .skill-tag {
+/* Set style for key. */
+.skill-tag-key {
+  color: #888; /* Match `.upme-field-value` header. */
+}
+
+.upme-field-value .skill-tag, .basic_skills .skill-tag, .advanced_skills .skill-tag, .skill-tag-key .skill-tag {
   display: inline-block;
   font-weight: 400;
   text-align: center;
