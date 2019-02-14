@@ -1,4 +1,9 @@
 .uwp-login, .uwp-registration, .uwp-forgot, .uwp-account {max-width: none;}
+/*Hide native WP Login*/
+.login label {
+  display:none;
+}
+
 
 /*Hide Google Login from Logged-In Users*/
 body.logged-in p.google-login-link {
