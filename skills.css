@@ -228,8 +228,8 @@ div.upme-wrap div.upme-field-value img {
   display: grid;
   display: -ms-grid;
   float: none;
-  grid-template-columns: 30% 35% 35%;
-  -ms-grid-columns: 30% 35% 35%;
+  grid-template-columns: 20% 27% 27% 26%;
+  -ms-grid-columns: 20% 27% 27% 26%;
 }
 
 #usertable .th, #usertable .td {
@@ -254,7 +254,7 @@ div.upme-wrap div.upme-field-value img {
   padding-left: 11rem;
 }
 
-#usertable .th2, #usertable .td2, #usertable .th7, #usertable .td7, #usertable .th8, #usertable .td8 {
+#usertable .th2, #usertable .td2, #usertable .th7, #usertable .td7, #usertable .th8, #usertable .td8, #usertable .th9, #usertable .td9 {
   grid-row: 1 / 2;
   -ms-grid-row: 1;
 }
@@ -272,11 +272,15 @@ div.upme-wrap div.upme-field-value img {
 #usertable .th8, #usertable .td8 {
   grid-column: 3 / 4;
   -ms-grid-column: 3;
-
-  border-right: none;
 }
 
-#usertable .th7 a, #usertable .th8 a {
+
+#usertable .th9, #usertable .td9 {
+ grid-column: 4 / 5;
+ -ms-grid-column: 4;
+}
+
+#usertable .th7 a, #usertable .th8 a, #usertable .th9 a {
   color: inherit;
 
   font-weight: normal;
@@ -348,7 +352,7 @@ div.upme-wrap div.upme-field-value img {
     border: none;
   }
 
-  #usertable .th7, #usertable .th8 {
+  #usertable .th7, #usertable .th8, #usertable .th9 {
     display: none;
   }
 
@@ -360,17 +364,24 @@ div.upme-wrap div.upme-field-value img {
   }
 
   #usertable .th7, #usertable .td7 {
-    grid-column: 1 / 2;
+    grid-column: 1 / 3;
     -ms-grid-column: 1;
     grid-row: 2 / 3;
     -ms-grid-row: 2;
   }
 
   #usertable .th8, #usertable .td8 {
-    grid-column: 1 / 2;
+    grid-column: 1 / 3;
     -ms-grid-column: 1;
     grid-row: 3 / 4;
     -ms-grid-row: 3;
+  }
+  
+  #usertable .th9, #usertable .td9 {
+    grid-column: 1 / 3;
+    -ms-grid-column: 1;
+    grid-row: 4 / 5;
+    -ms-grid-row: 4;
   }
 
   #usertable .small-screen-label {
@@ -599,13 +610,12 @@ div.upme-wrap div.upme-field-value img {
   }
 }
 
-.upme-field-value .skill-tag, .basic_skills .skill-tag, .advanced_skills .skill-tag {
 /* Set style for key. */
 .skill-tag-key {
   color: #888; /* Match `.upme-field-value` header. */
 }
 
-.upme-field-value .skill-tag, .basic_skills .skill-tag, .advanced_skills .skill-tag, .skill-tag-key .skill-tag {
+.upme-field-value .skill-tag, .basic_skills .skill-tag, .advanced_skills .skill-tag, .learn_skills .skill-tag, .skill-tag-key .skill-tag {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -635,8 +645,8 @@ div.upme-wrap div.upme-field-value img {
   cursor: inherit;
 }
 
-.upme-field-value .skill-tag:focus, .basic_skills .skill-tag:focus, .advanced_skills .skill-tag:focus,
-.upme-field-value .skill-tag:hover, .basic_skills .skill-tag:hover, .advanced_skills .skill-tag:hover {
+.upme-field-value .skill-tag:focus, .basic_skills .skill-tag:focus, .advanced_skills .skill-tag:focus, .learn_skills .skill-tag:focus,
+.upme-field-value .skill-tag:hover, .basic_skills .skill-tag:hover, .advanced_skills .skill-tag:hover, .learn_skills .skill-tag:hover {
   border: 1px solid #999;
 }
 
@@ -981,4 +991,8 @@ a.skill-toggle {
   body {
     cursor: pointer;
   }
+}
+
+.skill-edit-instructions p {
+  text-transform: none;
 }

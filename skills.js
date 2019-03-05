@@ -156,7 +156,7 @@ jQuery(function($) {
     searchBoxWrapper.find('input[type="text"]').wrap($('<fieldset></fieldset>'));
 
     var filtersWrapper = $('<div></div>').addClass('filters').appendTo(container),
-        filterFields = $('#wrap_description, #wrap_palni_institution, #wrap_basic_skills, #wrap_advanced_skills').appendTo(filtersWrapper),
+        filterFields = $('#wrap_description, #wrap_palni_institution, #wrap_basic_skills, #wrap_advanced_skills, #wrap_learn_skills').appendTo(filtersWrapper),
         filterButtonsWrapper = $('#filter_buttons').appendTo(filtersWrapper);
 
     // Give our two search/filter options titles.
@@ -275,7 +275,7 @@ jQuery(function($) {
 
   makeSkillTags($('.upme-view.upme-basic_skills .upme-field-value, .basic_skills'));
   makeSkillTags($('.upme-view.upme-advanced_skills .upme-field-value, .advanced_skills'));
-  makeSkillTags($('.upme-view.upme-learn_skills .upme-field-value'));
+  makeSkillTags($('.upme-view.upme-learn_skills .upme-field-value, .learn_skills'));
 
   // ---------------------------------------------------------------------------
   // Rewrite the directory table.
@@ -383,10 +383,11 @@ jQuery(function($) {
       directory.find('.th1, .th3, .th4, .th5, .th6').remove();
 
       // Remove links from skill column headers.
-      directory.find('.th7 a, .th8 a').removeAttr('href');
+      directory.find('.th7 a, .th8 a, .th9 a').removeAttr('href');
 
       // Add labels for skill fields for small-screen view.
       var basicSkillsName = $('.th7 a').text(),
+          learnSkillsName = $('.th9 a').text(),
           advancedSkillsName = $('.th8 a').text();
 
       directory.find('.td7:not(:empty)').prepend(
@@ -399,6 +400,12 @@ jQuery(function($) {
         $('<span></span>')
           .addClass('small-screen-label')
           .text(advancedSkillsName)
+      );
+      
+      directory.find('.td9:not(:empty)').prepend(
+        $('<span></span>')
+          .addClass('small-screen-label')
+          .text(learnSkillsName)
       );
 
       // Go row by row.
@@ -444,10 +451,11 @@ jQuery(function($) {
 
         emphasizeSkillTags(row.find('.basic_skills'));
         emphasizeSkillTags(row.find('.advanced_skills'));
+        emphasizeSkillTags(row.find('.learn_skills'));
       });
 
       // While we're here, let's make the filter options more readable.
-      $('#filter_basic_skills option:not([value=""]), #filter_advanced_skills option:not([value=""])').each(
+      $('#filter_basic_skills option:not([value=""]), #filter_advanced_skills option:not([value=""]), #filter_learn_skills option:not([value=""])').each(
         function(i, s) {
           s = $(s);
 
@@ -580,14 +588,17 @@ jQuery(function($) {
         links = $('<span></span>'),
         basicLink = $('<a></a>'),
         advancedLink = $('<a></a>'),
+        learnLink = $('<a></a>'),
         prioritySkillNote = $('<span><i class="fas fa-star"></i>\u00A0This skill is a priority skill.</span>');
 
     var basicUrl = '/?page_id=19&filter=1&basic_skills=' + encodeURIComponent('[' + category + '] - ' + name),
-        advancedUrl = '/?page_id=19&filter=1&advanced_skills=' + encodeURIComponent('[' + category + '] - ' + name);
+        advancedUrl = '/?page_id=19&filter=1&advanced_skills=' + encodeURIComponent('[' + category + '] - ' + name),
+        learnUrl = '/?page_id=19&filter=1&learn_skills=' + encodeURIComponent('[' + category + '] - ' + name);
+    
 
     el.append(title, $('<hr>'), links);
     title.append($('<span class="skill-tag-tooltip-tag">&nbsp;</span>'));
-    links.append(document.createTextNode('Search for users who are '), basicLink, document.createTextNode(' | '), advancedLink);
+    links.append(document.createTextNode('Search for users who are '), basicLink, document.createTextNode(' | '), advancedLink, document.createTextNode(' | '), learnLink);
 
     basicLink
       .attr('href', basicUrl)
@@ -598,6 +609,11 @@ jQuery(function($) {
       .attr('href', advancedUrl)
       .attr('target', '_blank')
       .text('Expert\u00A0')
+      .append($('<span class="fas fa-external-link-alt"></span>'));
+    learnLink
+      .attr('href', learnUrl)
+      .attr('target', '_blank')
+      .text('Want to Learn\u00A0')
       .append($('<span class="fas fa-external-link-alt"></span>'));
 
     if (prioritySkills.includes(name)) {
@@ -612,6 +628,7 @@ jQuery(function($) {
     links.addClass('skill-tag-tooltip-links');
     basicLink.addClass('skill-tag-tooltip-link skill-tag-tooltip-link-basic');
     advancedLink.addClass('skill-tag-tooltip-link skill-tag-tooltip-link-advanced');
+    learnLink.addClass('skill-tag-tooltip-link skill-tag-tooltip-link-learn');
     prioritySkillNote.addClass('skill-tag-tooltip-priority-skill-note');
 
     if (skillCategories[category]) {
@@ -652,7 +669,7 @@ jQuery(function($) {
       $(document.body).append(container);
 
       // The tooltips don't seem to work in the grid layout that the editing page uses.
-      $('.upme-field-value .skill-tag, .basic_skills .skill-tag, .advanced_skills .skill-tag').not('.upme-skills-values .skill-tag')
+      $('.upme-field-value .skill-tag, .basic_skills .skill-tag, .advanced_skills .skill-tag, .learn_skills .skill-tag').not('.upme-skills-values .skill-tag')
         .each(function (i, el) {
           $(el).removeAttr('title');
 
